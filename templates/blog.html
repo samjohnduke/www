@@ -4,10 +4,10 @@
 <h1 class="title">
   {{ section.title }}
 </h1>
-<ul>
-  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->  
-  {% for page in section.pages %}
-  <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+<ol class="entry-list">
+  <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
+  {% for post in section.pages %}
+  <li class="entry-list-item"><a href="{{post.permalink}}" class="content">{{post.title}}</a><div class="spacer"></div><div>{{post.date}}</div></li>
   {% endfor %}
-</ul>
+</ol>
 {% endblock content %}
