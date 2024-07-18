@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="title">Latest Journal Entries</h2>
+{% set post_section = get_section(path="blog/_index.md") %}
+<ol>
+{% for post in post_section.pages %}
+  <li class="entry-list-item"><a href="{{post.permalink}}" class="content">{{post.title}}</a><div class="spacer"></div><div>{{post.date}}</div></li>
+{% endfor %}
+</ol>
+
+
+
+{% endblock content %}
